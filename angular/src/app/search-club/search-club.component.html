@@ -1,0 +1,48 @@
+<div class="jumbotron">
+    <h2>Advanced Search</h2>
+<form>
+
+    <div class="form-group">
+        <label>Name</label> <input class="form-control" type="text" name="name" [(ngModel)]="searchClub.name">
+    </div>
+    
+    <div class="form-group">
+        <label>Value</label> <input class="form-control" type="text" name="value" [(ngModel)]="searchClub.value">
+    </div>
+    
+    
+    <div class="form-group">
+        <label>League</label>
+        
+        <select class="custom-select" name="leagueid" [(ngModel)]="searchClub.leagueid">
+            <option *ngFor="let league of leagues" [ngValue]="league.leagueid">{{league.name}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" (click)="searchClubs()" class="btn btn-success">Search Club</button>
+    </div>
+</form>
+</div>
+
+<div class="jumbotron">
+    <h2>Search Club</h2>
+    <div (click)="showClub(club.clubid)" class="club-container" *ngFor="let club of clubs; index as i">
+        <!-- <div class="club-photo">
+            <img [src]="club.imgurl" height="100" width="80">
+        </div> -->
+        <div class="card  text-white bg-dark">
+            <img *ngIf="!club.img; else elseBlock" class="card-img-top" src="https://i.pinimg.com/736x/d1/6e/65/d16e656b8d40f345d574cf3485ffeb00.jpg"  height="190" width="1000">
+            <ng-template #elseBlock>
+                <img class="card-img-top" src="{{'data:image/jpeg;base64,' + club.img}}"  height="190" width="1000">
+            </ng-template>
+            <div class="card-body">
+                <h6 class="card-title">Name: {{club.name}}</h6>
+                <h6 class="card-title">Value: {{club.value}}</h6>
+            </div>
+            
+            <!-- <h6>Imgurl: {{club.imgurl}}</h6> -->
+        </div>
+        
+    </div>
+</div>

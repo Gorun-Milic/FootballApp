@@ -1,0 +1,36 @@
+.jumbotron {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.image-box {
+    margin: 10px;
+}
+
+.flag-image {
+    margin-right: 5px;
+}
+
+.image {
+    border-radius: 20px 20px 20px 20px;
+}
+.player-info {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px;
+}
+
+.player-statistics {
+    border: dashed;
+    border-radius: 20px 20px 20px;
+    border-color: gray;
+    padding: 20px;
+    margin: 10px;
+}
+
+.remember {
+    margin: 10px;
+}

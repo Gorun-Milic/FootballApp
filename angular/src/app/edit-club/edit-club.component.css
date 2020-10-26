@@ -1,0 +1,11 @@
+.jumbotron {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.message {
+    background-color: seagreen;
+    padding: 30px;
+}

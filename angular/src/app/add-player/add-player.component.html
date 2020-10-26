@@ -1,0 +1,71 @@
+<app-navigation></app-navigation>
+<div class="jumbotron">
+<h2>Add Player</h2>
+<form>
+    <div class="form-group">
+        <label>Name:</label> <input class="form-control" type="text" name="name" [(ngModel)]="playerModel.name">
+    </div>
+
+    <div class="form-group">
+        <label>Surname:</label> <input class="form-control" type="text" name="surname" [(ngModel)]="playerModel.surname">
+    </div>
+
+    <div class="form-group">
+        <label>Position:</label>
+        
+        <select class="custom-select" name="position" [(ngModel)]="playerModel.position">
+            <option *ngFor="let position of positions">{{position}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Nation:</label>
+        
+        <select class="custom-select" name="nationid1" [(ngModel)]="playernation.nationid1">
+            <option *ngFor="let nation of nations" [ngValue]="nation.nationid">{{nation.name}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Nation:</label>
+        
+        <select class="custom-select" name="nationid2" [(ngModel)]="playernation.nationid2">
+            <option *ngFor="let nation of nations" [ngValue]="nation.nationid">{{nation.name}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Age:</label> <input class="form-control" type="text" name="age" [(ngModel)]="playerModel.age">
+    </div>
+
+    <div class="form-group">
+        <label>Birth:</label> <input class="form-control" type="text" name="dateofbirth" [(ngModel)]="playerModel.dateofbirth">
+    </div>
+
+    <div class="form-group">
+        <label>Foot:</label> <input class="form-control" type="text" name="foot" [(ngModel)]="playerModel.foot">
+    </div>
+
+    <div class="form-group">
+        <label>Height:</label> <input class="form-control" type="text" name="height" [(ngModel)]="playerModel.height">
+    </div>
+
+    <div class="form-group">
+        <label>Goals:</label> <input class="form-control" type="text" name="goals" [(ngModel)]="playerModel.goals">
+    </div>
+
+    <div class="form-group">
+        <label>Assists:</label> <input class="form-control" type="text" name="assists" [(ngModel)]="playerModel.assists">
+    </div>
+
+    <div class="message" *ngIf="clicked">{{message}}</div>
+
+    <div class="form-group">
+        <label>Photo:</label>
+        <br><input type="file" (change)="onFileChanged($event)">
+        <br><img [src]="imgURL" height="30" width="30" *ngIf="imgURL">
+    </div>
+    
+    <button type="submit" class="btn btn-success btn-block" (click)="addPlayer()">Add</button>
+</form>
+</div>

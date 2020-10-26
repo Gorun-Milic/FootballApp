@@ -1,0 +1,10 @@
+.btn-container {
+    background-color: grey;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: hidden;
+    border-radius: 5px;
+    margin: 10px;
+}

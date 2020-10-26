@@ -1,0 +1,53 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+    <div class="jumbotron">
+        
+        <div class="club-data-container">
+            <div class="club-info">
+                <img *ngIf="!convertedImage; else elseBlock" src="https://i.pinimg.com/736x/d1/6e/65/d16e656b8d40f345d574cf3485ffeb00.jpg"  height="200" width="200">
+                <ng-template #elseBlock>
+                    <img [src]="convertedImage" height="200" width="200">
+                </ng-template>
+                <h5>Name: {{watchClub.name}}</h5>
+                <h5>Value: {{watchClub.value + "M"}}</h5>
+                <h5>League: {{watchClub.league.name}}</h5>
+            </div>
+        </div>
+        
+        <div class="players-container">
+            <h2>Players:</h2>
+    
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Image</th>
+                        <th>Nationality</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Date of Birth</th>
+                        <th>Position</th>
+                        <th>Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of players">
+                            <td>
+                                <img *ngIf="!player.img; else elseBlock" src="data:image/jpeg;base64,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"  height="50" width="50">
+                                <ng-template #elseBlock>
+                                    <img src="{{'data:image/jpeg;base64,' + player.img}}"  height="50" width="50">
+                                </ng-template>
+                            </td>
+                            <td>nat</td>
+                            <td>{{player.name}}</td>
+                            <td>{{player.surname}}</td>
+                            <td>{{player.dateofbirth}}</td>
+                            <td>{{player.position}}</td>
+                            <td>2M</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

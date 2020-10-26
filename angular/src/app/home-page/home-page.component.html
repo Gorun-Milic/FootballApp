@@ -1,0 +1,54 @@
+<div class="container ">
+    <div class="jumbotron">
+        <h2>Register Form: </h2>
+        
+        <form #userForm="ngForm">
+            
+            <!-- {{clubModel.name}} -->
+            <div class="form-group">
+                <label>Name</label> <input class="form-control" type="text" name="name" [(ngModel)]="registerClub.name">
+            </div>
+            <!-- {{clubModel.value}} -->
+            <div class="form-group">
+                <label>Value</label> <input class="form-control" type="text" name="value" [(ngModel)]="registerClub.value">
+            </div>
+            <!-- {{clubModel.leagueid}} -->
+            <div class="form-group">
+                <label>League</label>
+                
+                <select class="custom-select" name="leagueid" [(ngModel)]="registerClub.leagueid">
+                    <option *ngFor="let league of leagues" [ngValue]="league.leagueid">{{league.name}}</option>
+                </select>
+            </div>
+
+            
+            
+            <!-- {{clubModel.password}} -->
+            <div class="form-group">
+                <label>Password</label> <input class="form-control" type="password" name="password" [(ngModel)]="registerClub.password">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" (click)="register()" class="btn btn-primary btn-block">Register</button>
+            </div>
+        </form>    
+    </div>
+    
+    
+
+    <div class="jumbotron">
+        <h2>Login Form: </h2>
+        <form>
+            <div class="form-group">
+                <label>Name</label> <input class="form-control" type="text" name="name" [(ngModel)]="loginClub.name">
+            </div>
+            <div class="form-group">
+                <label>Password</label> <input class="form-control" type="password" name="password" [(ngModel)]="loginClub.password">
+            </div>
+            <div class="form-group">
+                <button type="submit" (click)="login()" class="btn btn-primary btn-block">Login</button>
+            </div>
+        </form>    
+    </div>
+</div>
+

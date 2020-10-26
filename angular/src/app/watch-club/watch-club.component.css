@@ -1,0 +1,27 @@
+.jumbotron {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.players-container {
+    margin-top: 20px;
+}
+
+.club-data-container {
+    margin-bottom: 20px;
+    background-color: gainsboro;
+    padding: 25px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.club-info {
+    display: inline-block;
+}
+
+.club-photo {
+    display: inline-flex;
+    margin-right:30px;
+}
